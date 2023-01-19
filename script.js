@@ -38,15 +38,15 @@ function switchPlayer() {
 }
 
 function holdScores() {
-  scores[`${player}`] += score;
-  if (scores[`${player}`] >= 100) {
+  scores[player] += score;
+  if (scores[player] >= 100) {
     document
       .querySelector(`.player--${player}`)
       .classList.add('player--winner');
     btnRoll.removeEventListener('click', rollDice);
     btnHold.removeEventListener('click', holdScores);
   }
-  document.querySelector(`#score--${player}`).textContent = scores[`${player}`];
+  document.querySelector(`#score--${player}`).textContent = scores[player];
   switchPlayer();
 }
 
